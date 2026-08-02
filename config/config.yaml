@@ -1,0 +1,51 @@
+# ========================
+# NEO-REFUTE CONFIG FILE
+# ========================
+
+# Paths
+data:
+  raw: "data/raw/news_dataset.csv"
+  processed: "data/processed/preprocessed_data.csv"
+  stopwords: "data/external/stopwords.txt"
+  model_save: "models/saved/neo_refute_model.pt"
+
+# Preprocessing
+preprocessing:
+  lowercase: true
+  remove_stopwords: true
+  remove_special_chars: true
+  language: "english"
+
+# Feature Extraction
+bert:
+  model_name: "bert-base-uncased"
+  max_length: 256
+  batch_size: 16
+
+# SRCT Module
+srct:
+  counterfactual_samples: 2
+
+# RMC Module
+rmc:
+  memory_size: 1000
+
+# SCS Module
+scs:
+  credibility_file: "data/external/source_credibility.csv"
+
+# UGA Module
+uga:
+  uncertainty_threshold: 0.7
+
+# Training
+training:
+  epochs: 5
+  learning_rate: 2e-5
+  batch_size: 16
+  validation_split: 0.2
+
+# Logging
+logging:
+  log_file: "logs/train.log"
+  log_level: "INFO"

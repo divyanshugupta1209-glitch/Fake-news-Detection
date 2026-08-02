@@ -1,0 +1,13 @@
+myenv/
+venv/
+__pycache__/
+*.pyc
+*.pt
+*.pth
+*.safetensors
+.env
+models/google-credentials.json
+utils/google-credentials.json
+google_credentials.json 
+utils/google-credentials.json
+models/google-credentials.json

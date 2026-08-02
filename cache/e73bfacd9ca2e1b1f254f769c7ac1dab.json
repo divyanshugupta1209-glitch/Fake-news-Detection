@@ -1,0 +1,34 @@
+{
+  "timestamp": 1785513533.868854,
+  "claim": "cm of tamilnadu",
+  "has_image": false,
+  "result": {
+    "label": "FAKE",
+    "score": 0.0,
+    "details": {
+      "hf_score": 0.0,
+      "hf_label": "FAKE",
+      "hf_explanation": "Label: FAKE  \nScore: 0  \nExplanation: The phrase \"cm of tamilnadu\" lacks context and does not provide any verifiable information or newsworthy content. It appears to be incomplete or nonsensical.",
+      "image_score": null,
+      "ocr_result": null,
+      "ai_detection_result": null,
+      "model_label": "REAL",
+      "model_conf": 0.9336503148078918,
+      "fake_prob": 0.06634970754384995,
+      "real_prob": 0.9336503148078918,
+      "srct_vote": "REAL",
+      "rmc_vote": "UNKNOWN",
+      "scs_score": 0.55,
+      "scs_label": "NEUTRAL",
+      "uga_vote": "CONFIDENT",
+      "combined_score": 0.0,
+      "final_label": "FAKE",
+      "explanation": "Examining the claim through factual, linguistic, and contextual lenses offers useful clarity. The text analysis model interprets the claim as **likely genuine**, with a confidence level of 0.93. It aligns with patterns usually seen in verified or well-grounded reports. The source shows a mixed reliability record (neutral). It neither strongly confirms nor invalidates the claim. Since no image was provided, the system relied entirely on textual patterns and source credibility cues.  The language used is straightforward and lacks the typical signals of manipulation. Combining the evidence, the balance of signals points toward the claim being **false**. The inconsistencies and weak credibility elements outweigh the supporting ones."
+    },
+    "text_score": 0.0,
+    "text_label": "FAKE",
+    "explanation": "Label: FAKE  \nScore: 0  \nExplanation: The phrase \"cm of tamilnadu\" lacks context and does not provide any verifiable information or newsworthy content. It appears to be incomplete or nonsensical.",
+    "articles": [],
+    "url": ""
+  }
+}
