@@ -1,0 +1,34 @@
+{
+  "timestamp": 1785679358.4581325,
+  "claim": "Scientists confirm coffee cures cancer completely.",
+  "has_image": false,
+  "result": {
+    "label": "UNCERTAIN",
+    "score": 0.5,
+    "details": {
+      "hf_score": 0.5,
+      "hf_label": "UNCERTAIN",
+      "hf_explanation": "Missing OPENROUTER_API_KEY in .env",
+      "image_score": null,
+      "ocr_result": null,
+      "ai_detection_result": null,
+      "model_label": "FAKE",
+      "model_conf": 0.6410194635391235,
+      "fake_prob": 0.6410194635391235,
+      "real_prob": 0.3589804470539093,
+      "srct_vote": "FAKE",
+      "rmc_vote": "UNKNOWN",
+      "scs_score": 0.55,
+      "scs_label": "NEUTRAL",
+      "uga_vote": "CONFIDENT",
+      "combined_score": 0.5,
+      "final_label": "FAKE",
+      "explanation": "A closer look at the narrative and supporting details reveals several telling indicators. The automated text assessment raises doubts, assigning a 0.64 confidence towards the claim being **false**. Certain structural and tonal elements resemble known misleading narratives. The source shows a mixed reliability record (neutral). It neither strongly confirms nor invalidates the claim. Since no image was provided, the system relied entirely on textual patterns and source credibility cues.  A reverse-context comparison contradicts the claim, which often happens when a narrative has been reshaped from its original facts. The language used is straightforward and lacks the typical signals of manipulation. Combining the evidence, the balance of signals points toward the claim being **false**. The inconsistencies and weak credibility elements outweigh the supporting ones."
+    },
+    "text_score": 0.5,
+    "text_label": "UNCERTAIN",
+    "explanation": "Missing OPENROUTER_API_KEY in .env",
+    "articles": [],
+    "url": ""
+  }
+}

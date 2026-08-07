@@ -1,0 +1,47 @@
+{
+  "timestamp": 1785680076.3905995,
+  "claim": "NASA launched the James Webb Space Telescope",
+  "has_image": true,
+  "result": {
+    "label": "FAKE",
+    "score": 0.4952552331075376,
+    "details": {
+      "hf_score": 0.5,
+      "hf_label": "UNCERTAIN",
+      "hf_explanation": "Missing OPENROUTER_API_KEY in .env",
+      "image_score": 0.4841841103584589,
+      "ocr_result": {
+        "has_text": false,
+        "extracted_text": "",
+        "score": 0.7,
+        "match_ratio": 0,
+        "info": "No text detected in image (this is normal for photos)",
+        "warning": null
+      },
+      "ai_detection_result": {
+        "is_ai": false,
+        "confidence": 0.20889787375926971,
+        "score": 0.9,
+        "info": "\u2705 Image appears to be real photo (9979% confidence)",
+        "warning": null
+      },
+      "model_label": "REAL",
+      "model_conf": 0.5454590916633606,
+      "fake_prob": 0.4545409083366394,
+      "real_prob": 0.5454590916633606,
+      "srct_vote": "FAKE",
+      "rmc_vote": "UNCERTAIN",
+      "scs_score": 0.55,
+      "scs_label": "NEUTRAL",
+      "uga_vote": "UNCERTAIN",
+      "combined_score": 0.4952552331075376,
+      "final_label": "FAKE",
+      "explanation": "After reviewing the available material, a clearer sense of the claim\u2019s credibility begins to emerge. The text analysis model interprets the claim as **likely genuine**, with a confidence level of 0.55. It aligns with patterns usually seen in verified or well-grounded reports. The source shows a mixed reliability record (neutral). It neither strongly confirms nor invalidates the claim. The image loosely matches the described event (score: 0.48), providing only moderate support.  A reverse-context comparison contradicts the claim, which often happens when a narrative has been reshaped from its original facts. The language used is straightforward and lacks the typical signals of manipulation. Combining the evidence, the balance of signals points toward the claim being **false**. The inconsistencies and weak credibility elements outweigh the supporting ones."
+    },
+    "text_score": 0.5,
+    "text_label": "UNCERTAIN",
+    "explanation": "Missing OPENROUTER_API_KEY in .env",
+    "articles": [],
+    "url": ""
+  }
+}
