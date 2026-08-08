@@ -23,7 +23,7 @@ from utils import ai_image_detector
 # ==========================================================
 # 1. LOAD BERT MODEL
 # ==========================================================
-MODEL_DIR = "models/bert_fake_news_model"
+MODEL_DIR = "DivyanshuGupta/neo-refute-bert"
 _device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 _tokenizer = None
