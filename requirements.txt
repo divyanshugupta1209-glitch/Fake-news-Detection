@@ -17,3 +17,4 @@ tldextract
 streamlit==1.60.0
 starlette>=0.40.0,<2
 pytesseract
+reportlab
