@@ -172,10 +172,23 @@ def query_hf_model(news_text: str) -> dict:
 
     prompt = f"""You are a professional fact-checking AI.
 
-Analyze the news below and classify it as REAL or FAKE.
+Analyze the claim carefully and classify it as REAL, FAKE, or UNCERTAIN.
+
+Use these rules:
+
+REAL: The claim is supported by reliable and verifiable evidence or well-established facts.
+
+FAKE: The claim is clearly false, misleading, or contradicted by reliable evidence.
+
+UNCERTAIN: The claim cannot currently be verified, lacks sufficient reliable evidence, is an unconfirmed report, opinion, prediction, future event, or speculation.
+
+IMPORTANT:
+- Do not force a future prediction or opinion into REAL or FAKE.
+- If there is not enough evidence to confidently classify the claim as REAL or FAKE, choose UNCERTAIN.
+- Be careful with claims about future events, predictions, rumors, and unverified discoveries.
 
 Return output in EXACTLY this format:
-Label: REAL or FAKE
+Label: REAL or FAKE or UNCERTAIN
 Score: number between 0 and 1
 Explanation: brief reasoning
 
