@@ -186,6 +186,10 @@ IMPORTANT:
 - Do not force a future prediction or opinion into REAL or FAKE.
 - If there is not enough evidence to confidently classify the claim as REAL or FAKE, choose UNCERTAIN.
 - Be careful with claims about future events, predictions, rumors, and unverified discoveries.
+- A claim can still be REAL if it states a correct fact with less detail than the full fact.
+- Do NOT classify a claim as FAKE only because it does not include an exact date, day, time, or other extra detail, as long as the information it does provide is factually correct.
+- Example: If a fact happened on December 25, 2021, the statement "It happened in December 2021" should be classified as REAL, not FAKE.
+- Classify as FAKE only when the information directly contradicts verified facts or contains a materially false or misleading claim.
 
 Return output in EXACTLY this format:
 Label: REAL or FAKE or UNCERTAIN
@@ -299,7 +303,7 @@ News:
             "explanation": "Connection error. Check your internet connection."
         }
     except Exception as e:
-        print(f"⚠️ Unexpected error: {e}")
+        print(f"⚠️ Unexpected error: {e}")de
         return {
             "label":       "UNCERTAIN",
             "score":        0.5,
