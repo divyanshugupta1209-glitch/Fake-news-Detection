@@ -381,8 +381,17 @@ def fuse_predictions(
     else:
         combined_score = hf_score
 
-    combined_score = max(0.0, min(1.0, combined_score))
-    final_label    = "REAL" if combined_score >= 0.6 else "FAKE"
+   combined_score = max(0.0, min(1.0, combined_score))
+
+# Respect UNCERTAIN claims identified by the AI
+if hf_label == "UNCERTAIN":
+    final_label = "UNCERTAIN"
+elif combined_score >= 0.6:
+    final_label = "REAL"
+elif combined_score <= 0.4:
+    final_label = "FAKE"
+else:
+    final_label = "UNCERTAIN"
 
     # ── 5. Explanation ────────────────────────────────────
     explanation = generate_explanation(
