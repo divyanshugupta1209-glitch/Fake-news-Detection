@@ -303,7 +303,7 @@ News:
             "explanation": "Connection error. Check your internet connection."
         }
     except Exception as e:
-        print(f"⚠️ Unexpected error: {e}")de
+        print(f"⚠️ Unexpected error: {e}")
         return {
             "label":       "UNCERTAIN",
             "score":        0.5,
