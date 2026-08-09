@@ -270,10 +270,9 @@ with tabs[0]:
                     
                     progress_bar.progress(85)
 
-                    # ── 5. No image override ──────────────────
+                    # 5. Keep the fused verdict even when no image is uploaded
                     if image is None:
-                        final_label = t_label
-                        final_score = t_score
+                        details["image_score"] = None
 
                     # Always inject text score
                     details["hf_score"] = t_score
