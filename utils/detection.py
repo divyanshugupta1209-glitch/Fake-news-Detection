@@ -387,51 +387,51 @@ def fuse_predictions(
 
     combined_score = max(0.0, min(1.0, combined_score))
 
-# Respect UNCERTAIN claims identified by the AI
-if hf_label == "UNCERTAIN":
-    final_label = "UNCERTAIN"
+    # Respect UNCERTAIN claims identified by the AI
+    if hf_label == "UNCERTAIN":
+        final_label = "UNCERTAIN"
 
-# Handle future or speculative claims cautiously
-elif any(phrase in claim_text.lower() for phrase in [
-    "will", "by 2030", "by 2040", "by 2050",
-    "expected to", "plans to", "predicted to"
-]):
-    final_label = "UNCERTAIN"
+    # Handle future or speculative claims cautiously
+    elif any(phrase in claim_text.lower() for phrase in [
+        "will", "by 2030", "by 2040", "by 2050",
+        "expected to", "plans to", "predicted to"
+    ]):
+        final_label = "UNCERTAIN"
 
-elif combined_score >= 0.6:
-    final_label = "REAL"
+    elif combined_score >= 0.6:
+        final_label = "REAL"
 
-elif combined_score <= 0.4:
-    final_label = "FAKE"
+    elif combined_score <= 0.4:
+        final_label = "FAKE"
 
-else:
-    final_label = "UNCERTAIN"
+    else:
+        final_label = "UNCERTAIN"
 
     # ── 5. Explanation ────────────────────────────────────
     explanation = generate_explanation(
         final_label,
         combined_score,
         {
-            "hf_score":            hf_score,
-            "hf_label":            hf_label,
-            "hf_explanation":      hf_explanation,
-            "image_score":         image_score,
-            "model_label":         model_label,
-            "model_conf":          model_conf,
-            "fake_prob":           fake_p,
-            "real_prob":           real_p,
-            "srct_vote":           srct_vote,
-            "rmc_vote":            rmc_vote,
-            "scs_score":           scs_score,
-            "scs_label":           scs_label,
-            "uga_vote":            uga_vote,
-            "ocr_result":          ocr_result,
+            "hf_score": hf_score,
+            "hf_label": hf_label,
+            "hf_explanation": hf_explanation,
+            "image_score": image_score,
+            "model_label": model_label,
+            "model_conf": model_conf,
+            "fake_prob": fake_p,
+            "real_prob": real_p,
+            "srct_vote": srct_vote,
+            "rmc_vote": rmc_vote,
+            "scs_score": scs_score,
+            "scs_label": scs_label,
+            "uga_vote": uga_vote,
+            "ocr_result": ocr_result,
             "ai_detection_result": ai_detection_result,
         }
     )
 
     # ── 6. Return full details ────────────────────────────
-        return final_label, combined_score, {
+    return final_label, combined_score, {
         "hf_score": hf_score,
         "hf_label": hf_label,
         "hf_explanation": hf_explanation,
