@@ -431,27 +431,26 @@ else:
     )
 
     # ── 6. Return full details ────────────────────────────
-    return final_label, combined_score, {
-        # HF
-        "hf_score":            hf_score,
-        "hf_label":            hf_label,
-        "hf_explanation":      hf_explanation,
-        # Image
-        "image_score":         image_score,
-        "ocr_result":          ocr_result,
+        return final_label, combined_score, {
+        "hf_score": hf_score,
+        "hf_label": hf_label,
+        "hf_explanation": hf_explanation,
+
+        "image_score": image_score,
+        "ocr_result": ocr_result,
         "ai_detection_result": ai_detection_result,
-        # Supporting modules
-        "model_label":         model_label,
-        "model_conf":          model_conf,
-        "fake_prob":           fake_p,
-        "real_prob":           real_p,
-        "srct_vote":           srct_vote,
-        "rmc_vote":            rmc_vote,
-        "scs_score":           scs_score,
-        "scs_label":           scs_label,
-        "uga_vote":            uga_vote,
-        # Final
-        "combined_score":      combined_score,
-        "final_label":         final_label,
-        "explanation":         explanation,
+
+        "model_label": model_label,
+        "model_conf": model_conf,
+        "fake_prob": fake_p,
+        "real_prob": real_p,
+        "srct_vote": srct_vote,
+        "rmc_vote": rmc_vote,
+        "scs_score": scs_score,
+        "scs_label": scs_label,
+        "uga_vote": uga_vote,
+
+        "combined_score": combined_score,
+        "final_label": final_label,
+        "explanation": explanation,
     }
