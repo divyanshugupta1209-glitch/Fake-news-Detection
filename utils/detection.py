@@ -387,15 +387,25 @@ def fuse_predictions(
 
     combined_score = max(0.0, min(1.0, combined_score))
 
-    # Respect UNCERTAIN claims identified by the AI
-    if hf_label == "UNCERTAIN":
-        final_label = "UNCERTAIN"
-    elif combined_score >= 0.6:
-        final_label = "REAL"
-    elif combined_score <= 0.4:
-        final_label = "FAKE"
-    else:
-        final_label = "UNCERTAIN"
+# Respect UNCERTAIN claims identified by the AI
+if hf_label == "UNCERTAIN":
+    final_label = "UNCERTAIN"
+
+# Handle future or speculative claims cautiously
+elif any(phrase in claim_text.lower() for phrase in [
+    "will", "by 2030", "by 2040", "by 2050",
+    "expected to", "plans to", "predicted to"
+]):
+    final_label = "UNCERTAIN"
+
+elif combined_score >= 0.6:
+    final_label = "REAL"
+
+elif combined_score <= 0.4:
+    final_label = "FAKE"
+
+else:
+    final_label = "UNCERTAIN"
 
     # ── 5. Explanation ────────────────────────────────────
     explanation = generate_explanation(
